@@ -1,0 +1,13 @@
+.table__item {
+    width: 210px;
+    border: 1px solid;
+    text-align: start;
+}
+
+.form__search {
+    width: 650px;
+}
+
+.button__addModal {
+    margin-right: 60px;
+}

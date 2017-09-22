@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact list on Backbone</title>
+    <link rel="stylesheet" href="./js/components/listName-manager/css/style.css">
+    <link rel="stylesheet" href="./js/components/modalBox/css/style.css">
+</head>
+<body>
+    <template id="item">
+        <tr>
+            <td class="table__item"> {{ firstName }} </td>
+            <td class="table__item"> {{ lastName }} </td>
+            <td class="table__item">
+                <button type="button" name="deleteButton" class="deleteButton" data-id="{{ id }}">Delete</button>
+            </td>
+        </tr>
+    </template>
+
+    <template id="search">
+        <form class="form__search">
+            <fieldset>
+                <div>
+                    <span>My contact list</span>
+                    <button  type="button" id="addModal" name="addModal" class="button__addModal">Add</button>
+
+                    <button id="cancelButton" type="button" name="cancelButton" class="field-button__button">Reset</button>
+                    <select id="selectFieldSearch">
+                        <option value="firstName" selected="selected">First Name</option>
+                        <option value="lastName">Last Name</option>
+                    </select>
+                    <input type="search" id="filterText" name="filterText" class="filter-text__input" placeholder="Search">
+                    <button type="button" id="filterButton" name="filterButton">Go</button>
+                </div>
+            </fieldset>
+        </form>
+    </template>
+
+    <template id="modalWindow">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form action="index.html" method="post">
+                    <fieldset>
+                        <legend>Person</legend>
+                        <div class="form__addText">
+                            <span>First Name:</span>
+                            <input type="text" id="firstName" name="firstName" placeholder="Input First Name" autofocus>
+                        </div>
+                        <div class="form__addText">
+                            <span>Last Name:</span>
+                            <input type="text" id="lastName" name="lastName" placeholder="Input Last Name">
+                        </div>
+                        <button  type="button" id="addButton" name="addButton" class="form__addButton">Add person</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </template>
+
+
+    <div class="container">
+        <div class="search">
+
+        </div>
+
+        <div class="modalWindow"></div>
+
+        <table id="headerField" class="header-field">
+            <tr>
+                <th class ="table__item" data-name="firstName">First Name</th>
+                <th class ="table__item" data-name="lastName">Last Name</th>
+                <th class ="table__item">Delete</th>
+            </tr>
+        </table>
+
+        <table id="list" class="list">
+
+        </table>
+    </div>
+
+    <script type="text/javascript" src="../src/dist/bundle.js"></script>
+</body>
+</html>
